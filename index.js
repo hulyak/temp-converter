@@ -50,15 +50,15 @@ document.getElementById("main-unit").addEventListener("keyup", () => {
     if (secondUnit === "celsius") {
       document.getElementById("second-unit").value = numberTyped - 273.15;
     } else if (mainUnit === "fahrenheit") {
-      document.getElementById("second-unit").value = (numberTyped * 9) / 5 + 32;
+      document.getElementById("second-unit").value = (numberTyped - 273.15) * 9/5 + 32;
     } else {
       document.getElementById("second-unit").value = numberTyped;
     }
   } else if (mainUnit === "fahrenheit") {
     if (secondUnit === "celsius") {
-      document.getElementById("second-unit").value = numberTyped - 273.15;
+      document.getElementById("second-unit").value = (numberTyped - 32) * 5/9;
     } else if (secondUnit === "kelvin") {
-      document.getElementById("second-unit").value = numberTyped + 273.15;
+      document.getElementById("second-unit").value = (numberTyped - 32) * 5/9 + 273.15; 
     } else {
       document.getElementById("second-unit").value = numberTyped;
     }
